@@ -8,6 +8,11 @@ services:
       class: AppBundle\Manager\TaskManager
       arguments:
         - "@=service('doctrine').getManager()"
+
+  app.category_manager:
+      class: AppBundle\Manager\CategoryManager
+      arguments:
+        - "@=service('doctrine').getManager()"
     #service_name:
     #    class: AppBundle\Directory\ClassName
     #    arguments: ['@another_service_name', 'plain_value', '%parameter_name%']
