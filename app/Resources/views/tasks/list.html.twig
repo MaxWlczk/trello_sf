@@ -1,0 +1,24 @@
+{%  extends "::base.html.twig" %}
+
+{% block title 'Liste des taches' %}
+
+{% block header %}
+    <h1>Liste des taches</h1>
+{% endblock %}
+
+{% block content %}
+    {% for index, task in tasks %}
+        <div class="panel panel-default">
+            <div class="panel-body">
+                {{ task.name }}
+                {{ task.description }}
+            </div>
+        </div>
+    {% else %}
+        Aucune tache
+    {% endfor %}
+{% endblock %}
+
+{% block footer %}
+    {{ parent() }}
+{% endblock %}
