@@ -7,11 +7,13 @@
 {% endblock %}
 
 {% block content %}
-    {% for index, task in tasks %}
+    {% for category in categories %}
         <div class="panel panel-default">
             <div class="panel-body">
-                {{ task.name }}
-                {{ task.description }}
+                {{ category.name }}
+                {% for task in category.tasks %}
+                    {{ task.name }}
+                {%  endfor %}
             </div>
         </div>
     {% else %}

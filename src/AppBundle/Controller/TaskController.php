@@ -27,11 +27,14 @@ class TaskController extends Controller
      * @Route("/", name="app_task_list")
      */
     public function listAction(){
+        $categoryManager = $this->getCategoryManager();
+        $categories = $categoryManager->getCategory();
         $taskManager = $this->getTaskManager();
+//        $taskByCategory = $categories->getTasks();
         $tasks = $taskManager->getTask();
 
         return $this->render(':tasks:list.html.twig', [
-            'tasks' => $tasks,
+            'categories' => $categories,
         ]);
     }
 
