@@ -8,6 +8,7 @@
 
 namespace AppBundle\Controller;
 
+use AppBundle\Entity\Task;
 use AppBundle\Form\TaskType;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
@@ -59,6 +60,33 @@ class TaskController extends Controller
             $this->addFlash(
                 'success',
                 'votre tache a été créé'
+            );
+
+            return $this->redirectToRoute('app_task_list');
+        }
+
+        return $this->render(':tasks:new.html.twig', [
+            'form' => $form->createView(),
+        ]);
+    }
+
+    /**
+     * @Route("/task/edit/{id}", name="app_task_edit", methods={"GET", "POST"})
+     */
+    public function editAction(Request $request, Task $task)
+    {
+        $taskManager = $this->getTaskManager();
+
+        $form = $this->createForm(TaskType::class, $task);
+
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $taskManager->save($task);
+
+            $this->addFlash(
+                'success',
+                'votre tache a été modifié'
             );
 
             return $this->redirectToRoute('app_task_list');

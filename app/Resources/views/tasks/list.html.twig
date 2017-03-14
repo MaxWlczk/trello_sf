@@ -14,7 +14,7 @@
                 <div class="panel panel-default">
                     <div class="panel-body">
                         <div class="col-md-12">
-                            <a>{{ task.name }}</a>
+                            <a href="{{ path('app_task_edit', {id:task.id}) }}">{{ task.name }}</a>
                             <p>{{ task.description }}</p>
                             {#<select name="colummAct" class="selectpicker" >#}
                                 {#{% for select in categories %}#}
