@@ -8,13 +8,27 @@
 
 {% block content %}
     {% for category in categories %}
-        <div class="panel panel-default">
-            <div class="panel-body">
-                {{ category.name }}
-                {% for task in category.tasks %}
-                    {{ task.name }}
-                {%  endfor %}
-            </div>
+        <div class="col-md-3 text-center">
+            <p class="marginBottom10"><b>{{ category.name }}</b></p>
+            {% for task in category.tasks %}
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <div class="col-md-12">
+                            <a>{{ task.name }}</a>
+                            <p>{{ task.description }}</p>
+                            {#<select name="colummAct" class="selectpicker" >#}
+                                {#{% for select in categories %}#}
+                                    {#{% if select.id == category.id %}#}
+                                        {#<option value="{{ select.id }}" selected>{{ select.name }}</option>#}
+                                    {#{% else %}#}
+                                        {#<option value="{{ select.id }}">{{ select.name }}</option>#}
+                                    {#{% endif %}#}
+                                {#{% endfor %}#}
+                            {#</select>#}
+                        </div>
+                    </div>
+                </div>
+            {%  endfor %}
         </div>
     {% else %}
         Aucune tache
