@@ -5,16 +5,15 @@ namespace AppBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Task
+ * Task.
  *
  * @ORM\Table(name="task")
  * @ORM\Entity(repositoryClass="AppBundle\Repository\TaskRepository")
  */
 class Task
 {
-    const STATUS_OPEN = "open";
-    const STATUS_CLOSE = "close";
-
+    const STATUS_OPEN = 'open';
+    const STATUS_CLOSE = 'close';
 
     /**
      * @var int
@@ -56,9 +55,8 @@ class Task
      */
     private $category;
 
-
     /**
-     * Get id
+     * Get id.
      *
      * @return int
      */
@@ -68,7 +66,7 @@ class Task
     }
 
     /**
-     * Set name
+     * Set name.
      *
      * @param string $name
      *
@@ -82,7 +80,7 @@ class Task
     }
 
     /**
-     * Get name
+     * Get name.
      *
      * @return string
      */
@@ -92,7 +90,7 @@ class Task
     }
 
     /**
-     * Set description
+     * Set description.
      *
      * @param string $description
      *
@@ -106,7 +104,7 @@ class Task
     }
 
     /**
-     * Get description
+     * Get description.
      *
      * @return string
      */
@@ -116,9 +114,9 @@ class Task
     }
 
     /**
-     * Set status
+     * Set status.
      *
-     * @param boolean $status
+     * @param bool $status
      *
      * @return Task
      */
@@ -130,7 +128,7 @@ class Task
     }
 
     /**
-     * Get status
+     * Get status.
      *
      * @return bool
      */
@@ -140,7 +138,7 @@ class Task
     }
 
     /**
-     * Set category
+     * Set category.
      *
      * @param \AppBundle\Entity\Category $category
      *
@@ -154,7 +152,7 @@ class Task
     }
 
     /**
-     * Get category
+     * Get category.
      *
      * @return \AppBundle\Entity\Category
      */
