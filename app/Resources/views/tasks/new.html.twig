@@ -1,0 +1,100 @@
+{%  extends "::base.html.twig" %}
+
+{% block title 'Ajout d\'une tache' %}
+
+{% block header %}
+    <h1>Ajout d'une tache</h1>
+{% endblock %}
+
+{% block content %}
+    {{ form_start(form, {'attr': {'class': 'form-horizontal'}}) }}
+
+    {# Les erreurs générales du formulaire. #}
+    {{ form_errors(form) }}
+
+    {# Génération du label + error + widget pour un champ. #}
+    {#{{ form_row(form.title) }}#}
+
+    {# Génération manuelle et éclatée : #}
+    <div class="form-group">
+
+        {# Génération du label. #}
+        {{ form_label(form.name, "Name", {'label_attr': {'class': 'col-sm-2 text-center'}}) }}
+
+        {# Affichage des erreurs pour ce champ précis. #}
+        {{ form_errors(form.name) }}
+
+        <div class="col-sm-10 marginBottom10">
+            {# Génération de l'input. #}
+            {{ form_widget(form.name, {'attr': {'class': 'form-control'}}) }}
+        </div>
+
+
+
+        {#description#}
+
+
+
+        {{ form_label(form.description, "Description", {'label_attr': {'class': 'col-sm-2 text-center'}}) }}
+
+        {# Affichage des erreurs pour ce champ précis. #}
+        {{ form_errors(form.description) }}
+
+        <div class="col-sm-10 marginBottom10">
+            {# Génération de l'input. #}
+            {{ form_widget(form.description, {'attr': {'class': 'form-control'}}) }}
+        </div>
+
+
+
+
+        {#status#}
+
+
+
+        {{ form_label(form.status, "Status", {'label_attr': {'class': 'col-sm-2 text-center'}}) }}
+
+        {# Affichage des erreurs pour ce champ précis. #}
+        {{ form_errors(form.status) }}
+
+        <div class="col-sm-10 marginBottom10">
+            {# Génération de l'input. #}
+            {{ form_widget(form.status, {'attr': {'class': 'form-control'}}) }}
+        </div>
+
+
+
+
+        {#colonne#}
+
+
+
+        {{ form_label(form.category, "Category", {'label_attr': {'class': 'col-sm-2 text-center'}}) }}
+
+        {# Affichage des erreurs pour ce champ précis. #}
+        {{ form_errors(form.category) }}
+
+        <div class="col-sm-10 marginBottom10">
+            {# Génération de l'input. #}
+            {{ form_widget(form.category, {'attr': {'class': 'form-control'}}) }}
+        </div>
+
+        <div class="col-sm-2">
+            {# bouton submit du fomulaire #}
+            <button type="submit" class="btn btn-primary">Envoyer</button>
+        </div>
+    </div>
+
+    {# Génération automatique des champs pas encore écrits.
+     Dans cet exemple, ce serait le champ CSRF (géré automatiquement par Symfony !)
+     et tous les champs cachés (type « hidden »). #}
+    {{ form_rest(form) }}
+
+    {# Fermeture de la balise <form> du formulaire HTML #}
+    {{ form_end(form) }}
+
+{% endblock %}
+
+{% block footer %}
+    {{ parent() }}
+{% endblock %}

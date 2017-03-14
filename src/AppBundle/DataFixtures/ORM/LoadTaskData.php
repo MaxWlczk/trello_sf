@@ -3,11 +3,10 @@
  * Created by PhpStorm.
  * User: Utilisateur
  * Date: 13/03/2017
- * Time: 14:29
+ * Time: 14:29.
  */
 
 namespace AppBundle\DataFixtures\ORM;
-
 
 use AppBundle\Entity\Task;
 use Doctrine\Common\DataFixtures\AbstractFixture;
@@ -69,7 +68,7 @@ class LoadTaskData extends AbstractFixture implements OrderedFixtureInterface
             ],
         ];
 
-        foreach ($descriptions as $i => $description){
+        foreach ($descriptions as $i => $description) {
             $oneTask = new Task();
             $oneTask->setDescription($description['description']);
             $oneTask->setName($description['name']);

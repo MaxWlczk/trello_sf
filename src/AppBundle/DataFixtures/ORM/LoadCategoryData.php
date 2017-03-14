@@ -3,11 +3,10 @@
  * Created by PhpStorm.
  * User: Utilisateur
  * Date: 13/03/2017
- * Time: 14:29
+ * Time: 14:29.
  */
 
 namespace AppBundle\DataFixtures\ORM;
-
 
 use AppBundle\Entity\Category;
 use Doctrine\Common\DataFixtures\AbstractFixture;
@@ -25,7 +24,7 @@ class LoadCategoryData extends AbstractFixture implements OrderedFixtureInterfac
             'Bugs/comeback',
         ];
 
-        foreach ($categories as $i => $category){
+        foreach ($categories as $i => $category) {
             $oneCategory = new Category();
             $oneCategory->setName($category);
             $manager->persist($oneCategory);
