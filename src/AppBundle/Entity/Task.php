@@ -3,6 +3,7 @@
 namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * Task.
@@ -33,13 +34,13 @@ class Task
 
     /**
      * @var string
-     *
+     * @Assert\NotBlank()
      * @ORM\Column(name="description", type="string", length=255)
      */
     private $description;
 
     /**
-     * @var bool
+     * @var string
      *
      * @ORM\Column(name="status", type="string", length=255)
      */
